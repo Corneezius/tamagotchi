@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Tamagotchi</title>
+</head>
+<body>
+  {% if tamagotchis is not empty %}
+        <p>Here are all your tasks:</p>
+        <ul>
+            {% for tamagotchi in tamagotchis %}
+                <li>{{ tamagotchi.getName }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form action='/new_tamagotchi' method='post'>
+        <label for='description'>About Tamagotchi</label>
+        <input id='description' name='description' type='text'>
+
+        <button type='submit'>Add task</button>
+    </form>
+    <form action='/put_down' method='post'>
+        <button type='submit'>Clear</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+    <h1>Your Tamagotchis!</h1>
+    <p>{{ newtamagotchi.getName }}</p>
+    <p><a href='/'>View your Tamagotchis</a></p>
+</body>
+</html>
